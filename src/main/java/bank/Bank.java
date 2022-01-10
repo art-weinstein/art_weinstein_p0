@@ -19,15 +19,21 @@ public class Bank {
         System.out.println(password);
 
 
+        int authentication = 1;
+        while (authentication == 1) {
         System.out.println("Please log in using your credentials.");
         System.out.println("Username");
         String nameInput = scan.nextLine();
         System.out.println("Password");
         String passwordInput = scan.nextLine();
-        if(name.equals(nameInput) && password.equals(passwordInput)) {
-            System.out.println("Welcome " + name);
-        } else {
-            System.out.println("Please enter a valid username or password");
+            if (name.equals(nameInput) && password.equals(passwordInput)) {
+                authentication = 0;
+                System.out.println("Welcome " + name);
+            } else {
+                authentication = 1;
+                System.out.println("Please enter a valid username or password");
+            }
         }
     }
 }
+
