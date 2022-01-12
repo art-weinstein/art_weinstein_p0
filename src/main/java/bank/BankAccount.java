@@ -35,8 +35,6 @@ public class BankAccount {
             BankAccount bankAccount = new BankAccount();
             System.out.println("Enter an amount to transfer from personal funds to checking");
             double fundTransfer = scan.nextDouble();
-//            bankAccount.checking += scan.nextDouble();
-//            bankAccount.funds -= scan.nextDouble();
             while (bankAccount.funds != 0) {
                 if (fundTransfer <= bankAccount.funds) {
                     bankAccount.checking += fundTransfer;
@@ -53,6 +51,20 @@ public class BankAccount {
                 }
             }
             return "Funds, " + bankAccount.funds + ", checking, " + bankAccount.checking + ", savings" + bankAccount.savings;
+        }
+
+        public int command(){
+            Scanner scan = new Scanner(System.in);
+            System.out.println("What would you like to do?");
+            System.out.println("'1' to transfer from funds to checking");
+            System.out.println("'2' to transfer from funds to savings");
+            System.out.println("'3' to transfer from checking to savings");
+            System.out.println("'4' to transfer from savings to checking");
+            System.out.println("'5' to withdraw from savings");
+            System.out.println("'6' to withdraw from checking");
+            System.out.println("'7' log out");
+            int command = scan.nextInt();
+            return command;
         }
 
 
@@ -96,51 +108,3 @@ public class BankAccount {
         this.checking = checking;
     }
 }
-
-//    public String getUser(){return this.user; }
-//    public void setUser(String user){this.user= user;}
-
-//    public String getPassword(){return this.password; }
-//    public void setPassword(String password){this.password= password;}
-
-
-//    double checking;
-//    double savings;
-//    double personalFunds = 10000.00;
-//
-//    public BankAccount(){}
-
-//    public void User
-
-//    public static void main(String[] args) {
-//        Scanner scan = new Scanner(System.in);
-//
-//        System.out.println("Welcome to the bank! Please register an account.");
-//
-//        System.out.println("Enter a name");
-//        String userName = scan.nextLine();
-//        System.out.println(this.name);
-//
-//        System.out.println("Enter a password");
-//        this.password = scan.nextLine();
-//        System.out.println(this.password);
-//
-//
-//        int authentication = 1;
-//        while (authentication == 1) {
-//        System.out.println("Please log in using your credentials.");
-//        System.out.println("Username");
-//        String nameInput = scan.nextLine();
-//        System.out.println("Password");
-//        String passwordInput = scan.nextLine();
-//            if (name.equals(nameInput) && password.equals(passwordInput)) {
-//                authentication = 0;
-//                System.out.println("Welcome " + name);
-//            } else {
-//                authentication = 1;
-//                System.out.println("Please enter a valid username or password");
-//            }
-//        }
-//    }
-
-

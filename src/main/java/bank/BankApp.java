@@ -32,6 +32,25 @@ public class BankApp {
         System.out.println(bankAccount.checking);
         System.out.println("Savings");
         System.out.println(bankAccount.savings);
+//
+//        System.out.println("What would you like to do?");
+//        System.out.println("'1' to transfer from funds to checking");
+//        System.out.println("'2' to transfer from funds to savings");
+//        System.out.println("'3' to transfer from checking to savings");
+//        System.out.println("'4' to transfer from savings to checking");
+//        System.out.println("'5' to withdraw from savings");
+//        System.out.println("'6' to withdraw from checking");
+//        System.out.println("'7' log out");
+
+
+//        System.out.println(bankAccount.command());
+
+        if(bankAccount.command() == 1){
         System.out.println(bankAccount.transferFundsToChecking());
+        System.out.println(bankAccount.command());
+        } else {
+            System.out.println("additional methods will go here");
+        }
+
     }
 }
