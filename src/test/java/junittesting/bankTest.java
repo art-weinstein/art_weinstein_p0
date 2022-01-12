@@ -14,20 +14,30 @@ public class bankTest {
     @BeforeAll
     public static void setUp(){
         System.out.println("Initialization before tests run");
+        bankAccount1 = new BankAccount(){
+        };
     }
     @BeforeEach
     public void before(){
         System.out.println("Run next test");
     }
 
+
     @Test
-    public void name(){
-//        Bank bank = new Bank();
-//        String name = "art";
-//        InputStream in = new ByteArrayInputStream(name.getBytes());
-//        System.setIn(in);
-//        assertEquals("art", name());
+    public void getName(){String name = "art";
+       bankAccount1 = new BankAccount();
+       bankAccount1.name = name;
+       bankAccount1.getName();
+       assertEquals("art", bankAccount1.getName());
     }
+
+//    @Test
+//    public void validateAccount(){
+//       bankAccount1.getName();
+//       assertEquals("Art", bankAccount1.getName());
+//
+//    }
+
     @Test
     public void password(){
         String password = "password";
