@@ -30,6 +30,31 @@ public class BankAccount {
         }
         return null;
     }
+        public String transferFundsToChecking() {
+            Scanner scan = new Scanner(System.in);
+            BankAccount bankAccount = new BankAccount();
+            System.out.println("Enter an amount to transfer from personal funds to checking");
+            double fundTransfer = scan.nextDouble();
+//            bankAccount.checking += scan.nextDouble();
+//            bankAccount.funds -= scan.nextDouble();
+            while (bankAccount.funds != 0) {
+                if (fundTransfer <= bankAccount.funds) {
+                    bankAccount.checking += fundTransfer;
+                    bankAccount.funds -= fundTransfer;
+                    return "Funds, " + bankAccount.funds + ", checking, " + bankAccount.checking;
+
+                } else {
+                    System.out.println("Insufficient funds, please enter a valid amount!");
+                    System.out.println("Current funds:");
+                    System.out.println(bankAccount.funds);
+                    System.out.println("Current Checking");
+                    System.out.println(bankAccount.checking);
+                    fundTransfer = scan.nextDouble();
+                }
+            }
+            return "Funds, " + bankAccount.funds + ", checking, " + bankAccount.checking + ", savings" + bankAccount.savings;
+        }
+
 
     public static String getName() {
         return name;
@@ -45,6 +70,30 @@ public class BankAccount {
 
     public static void setPassword(String password) {
         BankAccount.password = password;
+    }
+
+    public double getFunds() {
+        return funds;
+    }
+
+    public void setFunds(double funds) {
+        this.funds = funds;
+    }
+
+    public double getSavings() {
+        return savings;
+    }
+
+    public void setSavings(double savings) {
+        this.savings = savings;
+    }
+
+    public double getChecking() {
+        return checking;
+    }
+
+    public void setChecking(double checking) {
+        this.checking = checking;
     }
 }
 

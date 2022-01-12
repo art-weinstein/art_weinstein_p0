@@ -31,6 +31,14 @@ public class bankTest {
        assertEquals("art", bankAccount1.getName());
     }
 
+    @Test
+    public void getPassword(){String password = "password";
+        bankAccount1 = new BankAccount();
+        bankAccount1.password = password;
+        bankAccount1.getName();
+        assertEquals("password", bankAccount1.getName());
+    }
+
 //    @Test
 //    public void validateAccount(){
 //       bankAccount1.getName();

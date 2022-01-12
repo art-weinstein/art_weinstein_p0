@@ -26,5 +26,12 @@ public class BankApp {
 
         String user = (String) bankAccount.validateAccount(name, password);
         System.out.println(user);
+        System.out.println("Personal funds");
+        System.out.println(bankAccount.funds);
+        System.out.println("Checking Account");
+        System.out.println(bankAccount.checking);
+        System.out.println("Savings");
+        System.out.println(bankAccount.savings);
+        System.out.println(bankAccount.transferFundsToChecking());
     }
 }
