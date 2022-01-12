@@ -41,16 +41,26 @@ public class BankApp {
 //        System.out.println("'5' to withdraw from savings");
 //        System.out.println("'6' to withdraw from checking");
 //        System.out.println("'7' log out");
+//        int command = scan.nextInt();
+
+//        System.out.println(bankAccount.command());
+//        String command = scan.nextLine();
 
 
 //        System.out.println(bankAccount.command());
+        while (bankAccount.command() != 7) {
+            int command = scan.nextInt();
+            if (command == 1) {
+                System.out.println(bankAccount.transferFundsToChecking());
+//                System.out.println(bankAccount.command());
+            } else if (command == 7) {
+                System.out.println(bankAccount.logOut());
+                break;
+            } else {
+                System.out.println("additional features go here");
+                break;
+            }
 
-        if(bankAccount.command() == 1){
-        System.out.println(bankAccount.transferFundsToChecking());
-        System.out.println(bankAccount.command());
-        } else {
-            System.out.println("additional methods will go here");
         }
-
     }
 }

@@ -4,9 +4,9 @@ import java.util.Scanner;
 public class BankAccount {
    public static String name;
    public static String password;
-   public double funds = 1000.00;
-   public double savings = 0.00;
-   public double checking = 0.00;
+   public static double funds = 1000.00;
+   public static double savings = 0.00;
+   public static double checking = 0.00;
 
 
     public BankAccount() {
@@ -53,8 +53,14 @@ public class BankAccount {
             return "Funds, " + bankAccount.funds + ", checking, " + bankAccount.checking + ", savings" + bankAccount.savings;
         }
 
+        public String logOut(){
+        BankAccount bankAccount = new BankAccount();
+        return "Thank you " + bankAccount.name + ", goodbye!";
+        }
+
         public int command(){
-            Scanner scan = new Scanner(System.in);
+            BankAccount bankAccount = new BankAccount();
+//            Scanner scan = new Scanner(System.in);
             System.out.println("What would you like to do?");
             System.out.println("'1' to transfer from funds to checking");
             System.out.println("'2' to transfer from funds to savings");
@@ -63,8 +69,9 @@ public class BankAccount {
             System.out.println("'5' to withdraw from savings");
             System.out.println("'6' to withdraw from checking");
             System.out.println("'7' log out");
-            int command = scan.nextInt();
-            return command;
+//            double command = scan.nextDouble();
+            return 1;
+//            return command;
         }
 
 
